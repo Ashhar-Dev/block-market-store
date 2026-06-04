@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOCK MARKET | System Info</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+    
+    <!-- Specific CSS just for the About Page text boxes -->
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .terminal-box {
+            background-color: #000;
+            color: #55FFFF;
+            border: 4px solid #55FFFF;
+            padding: 25px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-size: 12px;
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .block-box {
+            background-color: #8B8B8B;
+            border: 4px solid #000;
+            padding: 25px;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            font-size: 12px;
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .data-table td {
+            padding: 15px 0;
+            border-bottom: 4px dashed #000;
+        }
+
+        .highlight-yellow { color: #FFEA00; }
+        .highlight-green { color: #4C9A2A; text-shadow: 1px 1px 0px #000; }
+        
+        /* Retro Counter */
+        .counter-box {
+            text-align: center;
+            background-color: #2D2D2D;
+            border: 4px solid #000;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BLOCKY NAVBAR (With Correct Links) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo"><h2>BLOCK MARKET</h2></div>
+            
+            <nav class="category-links" style="padding: 0;">
+                <a href="index.html">BASE CAMP</a>
+                <a href="shop.html">ALL LOOT</a>
+                <!-- This page is highlighted active -->
+                <a href="about.html" style="color: #55FFFF; border-color: #55FFFF; background: #000;">SYSTEM INFO</a>
+            </nav>
+
+            <div class="cart-icon-container snipcart-checkout">
+                <span class="cart-text">INVENTORY [<span id="cart-count" class="snipcart-items-count">0</span>]</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. MAIN ABOUT CONTENT -->
+    <main class="about-container">
+        
+        <h2 class="section-title">== THE MANIFESTO ==</h2>
+        
+        <!-- TERMINAL QUOTE SECTION -->
+        <div class="terminal-box">
+            <p style="margin-bottom: 20px;">
+                > "THE MARKET DOES NOT NEED MORE BORING STORES. IT NEEDS RAW, UNFILTERED ENERGY."
+            </p>
+            <p style="margin-bottom: 20px;">
+                > "ADVICE TO NEW ASPIRING PLAYERS: STOP WAITING FOR PERFECTION. BUILD LIGHTWEIGHT, CODE EXPERIMENTAL DESIGNS, FIX THE BOTTLENECKS, AND DOMINATE YOUR NICHE."
+            </p>
+            <p class="highlight-yellow">
+                > RUN HARDWARE THAT MATCHES YOUR MINDSET.
+            </p>
+        </div>
+
+        <h2 class="section-title">== SYSTEM DATA ==</h2>
+
+        <!-- ORIGIN DATA SECTION -->
+        <div class="block-box">
+            <table class="data-table">
+                <tr>
+                    <td class="highlight-yellow">ORIGIN COMPILE DATE:</td>
+                    <td style="text-align: right;">JUNE 2026</td>
+                </tr>
+                <tr>
+                    <td class="highlight-yellow">SERVER LOCATION:</td>
+                    <td style="text-align: right;">BANGALORE, INDIA</td>
+                </tr>
+                <tr>
+                    <td class="highlight-yellow">SECURE COMM LINK:</td>
+                    <td style="text-align: right;">admin@blockmarket.in</td>
+                </tr>
+                <tr>
+                    <td class="highlight-yellow" style="border-bottom: none;">DIRECT LINE:</td>
+                    <td style="text-align: right; border-bottom: none;">+91 98765 43210</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- SITE COUNTER FOOTER PANEL -->
+        <div class="counter-box">
+            <p style="color: #AAAAAA; font-size: 10px; margin-bottom: 10px;">TOTAL UNIQUE SPAWNS (VISITORS)</p>
+            <h2 id="visit-counter" class="highlight-yellow" style="font-size: 24px; text-shadow: 3px 3px 0px #000;">00004278</h2>
+        </div>
+
+    </main>
+
+    <!-- Snipcart Engine (Required so the cart button still works here) -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+    <div id="snipcart" data-api-key="YTQ1NDkwMzItZmE2Yy00NmVlLWI4M2ItMmEyOTYyNTI0NjYzNjM5MTYxMDgwOTM5ODA0NjU5" hidden></div>
+
+    <!-- Live Counter Mock Script (Purely Visual) -->
+    <script>
+        // Simple 8-bit counter trick to simulate live tracker updates
+        let count = 4278 + Math.floor(Math.random() * 12);
+        document.getElementById('visit-counter').innerText = String(count).padStart(8, '0');
+    </script>
+
+</body>
+</html>
