@@ -4,12 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK MARKET | Retro E-Commerce</title>
+    <meta name="description" content="Block Market: Underground streetwear, Y2K archive fashion, and retro tech apparel based in Bangalore.">
+    <meta name="keywords" content="Block market store, streetwear India, archive fashion bangalore, retro clothing, hacker apparel">
+    <meta name="author" content="Block Market">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
     
     
 </head>
 <body>
+    <!-- =========================================
+         FIRST-TIME VISITOR LOGIN OVERLAY 
+    ========================================= -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="terminal-box login-box">
+            <h2 style="color: #55FFFF; margin-bottom: 10px;">> SYSTEM ACCESS</h2>
+            <p style="font-size: 10px; margin-bottom: 20px;">ENTER MOBILE NUMBER TO INITIATE SESSION.</p>
+            
+            <input type="tel" id="mobile-input" placeholder="+91 _ _ _ _ _  _ _ _ _ _" class="retro-input">
+            <button onclick="grantAccess()" class="retro-btn">LINK DEVICE</button>
+            
+            <p style="font-size: 8px; margin-top: 15px; color: #888;">> GUEST ACCESS GRANTED UPON ENTRY</p>
+        </div>
+    </div>
+    <!-- =========================================
+         SCROLLING ANNOUNCEMENT BAR 
+    ========================================= -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🚨 FREE SHIPPING ON ALL PREPAID ORDERS 🚨</span>
+            <span>CASH ON DELIVERY (COD) AVAILABLE 🚨</span>
+            <span>SYSTEM OVERRIDE: USE CODE 'BLOCK10' 🚨</span>
+            <span>FREE SHIPPING ON ALL PREPAID ORDERS 🚨</span>
+        </div>
+    </div>
 
 <!-- 1. BLOCKY NAVBAR -->
     <header class="navbar">
@@ -28,6 +56,15 @@
             </div>
         </div>
     </header>
+    <!-- =========================================
+         MOVING HERO POSTER
+    ========================================= -->
+    <section class="moving-hero">
+        <div class="hero-overlay">
+            <h1 class="hero-title">BLOCK MARKET</h1>
+            <p class="hero-subtitle">> NEW ARCHIVE DROPS EVERY WEEK_</p>
+        </div>
+    </section>
     <section class="hero-banners">
         
         <div class="banner-card dedication-card">
@@ -144,8 +181,77 @@
             <span class="current-price">₹8,499</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="m-008" data-item-price="8499.00" data-item-name="1TB Gen4 NVMe" data-item-url="index.html" data-item-image="https://images.unsplash.com/photo-1531492746076-161ca9bcad58?w=500">+ ADD TO INVENTORY</button>
         </div>
-    </div> <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+    </div> 
+    <!-- =========================================
+         FOOTER & SOCIAL LINKS
+    ========================================= -->
+    <footer class="site-footer">
+        <div class="social-links">
+            
+            <!-- INSTAGRAM LINK -->
+            <!-- Replace 'your_profile_username' with your actual Instagram handle -->
+            <a href="https://www.instagram.com/your_profile_username/" target="_blank" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram">
+            </a>
+            
+            <!-- AUTOMATIC EMAIL LINK -->
+            <!-- Replace 'yourname@email.com' with your business email address -->
+            <a href="mailto:yourname@email.com?subject=Block%20Market%20Inquiry" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+            </a>
+            
+        </div>
+        <p class="footer-text">> JOIN THE SERVER. FOLLOW THE CULT.</p>
+    </footer>
+    <p style="margin-top: 15px;">
+    <a href="#" onclick="localStorage.clear(); location.reload();" style="color: #FF2222; font-size: 10px; text-decoration: none;">[ LOGOUT / CLEAR DEVICE MEMORY ]</a>
+</p>
+    
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
     <div id="snipcart" data-api-key="YTQ1NDkwMzItZmE2Yy00NmVlLWI4M2ItMmEyOTYyNTI0NjYzNjM5MTYxMDgwOTM5ODA0NjU5" hidden></div>
+    
+    <!-- =========================================
+         EVENT INTERCEPTION & LOGIN LOGIC
+    ========================================= -->
+    <script>
+        // 1. The Interceptor: Listen to ALL clicks on the webpage BEFORE they process
+        document.addEventListener('click', function(event) {
+            
+            // Check if the exact thing they clicked was a Snipcart Add button
+            if (event.target.closest('.snipcart-add-item')) {
+                
+                // Check browser memory
+                let hasVisited = localStorage.getItem("userLoggedIn");
+                
+                // If they have NO memory tag (not logged in)
+                if (!hasVisited) {
+                    event.preventDefault();     // Block the button's default action
+                    event.stopPropagation();    // Block Snipcart from seeing the click
+                    
+                    // Trigger the login pop-up instead
+                    document.getElementById("login-modal").style.display = "flex";
+                }
+                // If they DO have the memory tag, the code does nothing and Snipcart works normally!
+            }
+        }, true); // The 'true' at the end is the master key. It forces this script to run before any other script on the website.
+
+        // 2. Grant Access Function (Runs when they submit their number)
+        function grantAccess() {
+            let mobile = document.getElementById("mobile-input").value;
+            
+            if (mobile.length > 5) {
+                // Write the permanent tag into their browser
+                localStorage.setItem("userLoggedIn", "true");
+                
+                // Hide the pop-up
+                document.getElementById("login-modal").style.display = "none";
+                
+                alert("Device Linked! You can now add items to your inventory.");
+            } else {
+                alert("ERROR: Invalid Mobile Number.");
+            }
+        }
+    </script>
 
 </body>
 </html>
