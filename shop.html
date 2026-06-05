@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOCK MARKET | All Inventory</title>
+    <title>BLOCK MARKET | All Loot</title>
     <meta name="description" content="Block Market: Underground streetwear, Y2K archive fashion, and retro tech apparel based in Bangalore.">
     <meta name="keywords" content="Block market store, streetwear India, archive fashion bangalore, retro clothing, hacker apparel">
     <meta name="author" content="Block Market">
@@ -24,6 +24,21 @@
 </head>
 <body>
 
+    <!-- =========================================
+         FIRST-TIME VISITOR LOGIN OVERLAY 
+    ========================================= -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="terminal-box login-box">
+            <h2 style="color: #55FFFF; margin-bottom: 10px;">> SYSTEM ACCESS</h2>
+            <p style="font-size: 10px; margin-bottom: 20px;">ENTER MOBILE NUMBER TO INITIATE SESSION.</p>
+            
+            <input type="tel" id="mobile-input" placeholder="+91 _ _ _ _ _  _ _ _ _ _" class="retro-input">
+            <button onclick="grantAccess()" class="retro-btn">LINK DEVICE</button>
+            
+            <p style="font-size: 8px; margin-top: 15px; color: #888;">> GUEST ACCESS GRANTED UPON ENTRY</p>
+        </div>
+    </div>
+
     <!-- 1. BLOCKY NAVBAR -->
     <header class="navbar">
         <div class="nav-container">
@@ -40,6 +55,18 @@
             </div>
         </div>
     </header>
+
+    <!-- =========================================
+         SCROLLING ANNOUNCEMENT BAR 
+    ========================================= -->
+    <div class="announcement-bar">
+        <div class="scrolling-text">
+            <span>🚨 FREE SHIPPING ON ORDERS ABOVE ₹1,000 🚨</span>
+            <span>CASH ON DELIVERY (COD) AVAILABLE 🚨</span>
+            <span>SYSTEM OVERRIDE: USE CODE 'BLOCK10' 🚨</span>
+            <span>FREE SHIPPING ON ORDERS ABOVE ₹1,000 🚨</span>
+        </div>
+    </div>
 
     <!-- 2. CATEGORY QUICK FILTERS -->
     <div class="category-bar">
@@ -64,6 +91,7 @@
             <h3 class="product-name">Intel Core i5-12600K</h3>
             <span class="current-price">₹18,500</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-001" data-item-price="18500.00" data-item-name="Intel Core i5-12600K" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1591405351990-4726e331f141?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 2: PC Hardware -->
@@ -75,6 +103,7 @@
             <h3 class="product-name">1TB NVMe Gen 4 SSD</h3>
             <span class="current-price">₹8,499</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-002" data-item-price="8499.00" data-item-name="1TB NVMe Gen 4 SSD" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1562976540-1502c2145186?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 3: Anime Apparel -->
@@ -86,6 +115,7 @@
             <h3 class="product-name">Sun God Oversized Tee</h3>
             <span class="current-price">₹1,499</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-003" data-item-price="1499.00" data-item-name="Sun God Oversized Tee" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 4: Mobile Gaming -->
@@ -97,6 +127,7 @@
             <h3 class="product-name">Tactical Case (Poco M2 Pro)</h3>
             <span class="current-price">₹499</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-004" data-item-price="499.00" data-item-name="Tactical Case (Poco M2 Pro)" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 5: Security / Networking -->
@@ -108,6 +139,7 @@
             <h3 class="product-name">Cisco Practice Lab Router</h3>
             <span class="current-price">₹4,500</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-005" data-item-price="4500.00" data-item-name="Cisco Practice Lab Router" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 6: Anime Apparel -->
@@ -119,6 +151,7 @@
             <h3 class="product-name">UA High Varsity Jacket</h3>
             <span class="current-price">₹3,299</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-006" data-item-price="3299.00" data-item-name="UA High Varsity Jacket" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 7: Sports Archive -->
@@ -130,6 +163,7 @@
             <h3 class="product-name">RCB 2016 Retro Jersey</h3>
             <span class="current-price">₹2,499</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-007" data-item-price="2499.00" data-item-name="RCB 2016 Retro Jersey" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 8: Grey Hat Apparel -->
@@ -141,6 +175,7 @@
             <h3 class="product-name">Grey Hat Hacker Snapback</h3>
             <span class="current-price">₹899</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-008" data-item-price="899.00" data-item-name="Grey Hat Hacker Snapback" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1521369909029-133eb870f074?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 9: Y2K Streetwear -->
@@ -152,6 +187,7 @@
             <h3 class="product-name">Baggy Parachute Cargos</h3>
             <span class="current-price">₹1,799</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-009" data-item-price="1799.00" data-item-name="Baggy Parachute Cargos" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 10: Anime Apparel -->
@@ -163,6 +199,7 @@
             <h3 class="product-name">Yorozuya Heavyweight Hoodie</h3>
             <span class="current-price">₹2,199</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-010" data-item-price="2199.00" data-item-name="Yorozuya Heavyweight Hoodie" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 11: Gaming Accessories -->
@@ -174,6 +211,7 @@
             <h3 class="product-name">Carbon Fiber Finger Sleeves</h3>
             <span class="current-price">₹299</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-011" data-item-price="299.00" data-item-name="Carbon Fiber Finger Sleeves" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 12: Gaming Hardware -->
@@ -185,6 +223,7 @@
             <h3 class="product-name">60% Mechanical Keyboard</h3>
             <span class="current-price">₹3,499</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-012" data-item-price="3499.00" data-item-name="60% Mechanical Keyboard" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1595225476474-87563907a212?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 13: Hardware Demo -->
@@ -196,6 +235,7 @@
             <h3 class="product-name">Motorola Edge 70 Dummy Unit</h3>
             <span class="current-price">₹1,199</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-013" data-item-price="1199.00" data-item-name="Motorola Edge 70 Dummy Unit" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 14: Game Apparel -->
@@ -207,6 +247,7 @@
             <h3 class="product-name">World of Tanks Bomber</h3>
             <span class="current-price">₹2,899</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-014" data-item-price="2899.00" data-item-name="World of Tanks Bomber" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
         <!-- ITEM 15: Accessories -->
@@ -218,13 +259,74 @@
             <h3 class="product-name">Cyberpunk Wrap Sunglasses</h3>
             <span class="current-price">₹899</span>
             <button class="add-to-cart-btn snipcart-add-item" data-item-id="tc-015" data-item-price="899.00" data-item-name="Cyberpunk Wrap Sunglasses" data-item-url="shop.html" data-item-image="https://images.unsplash.com/photo-1572635196237-14b3f281501f?w=500">+ ADD TO INVENTORY</button>
+            <p style="font-size: 8px; color: #888; margin-top: 5px; text-align: center;">SHIPS IN 3-5 WORKING DAYS. TRACKING SENT VIA EMAIL.</p>
         </div>
 
     </div> <!-- END SHOP GRID -->
 
-    <!-- Snipcart Engine (PASTE YOUR REAL KEY HERE) -->
+    <!-- =========================================
+         FOOTER & SOCIAL LINKS
+    ========================================= -->
+    <footer class="site-footer">
+        <div class="social-links">
+            <!-- Replace 'your_profile_username' with your actual Instagram handle -->
+            <a href="https://www.instagram.com/your_profile_username/" target="_blank" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram">
+            </a>
+            
+            <!-- AUTOMATIC EMAIL LINK -->
+            <!-- Replace 'yourname@email.com' with your business email address -->
+            <a href="mailto:yourname@email.com?subject=Block%20Market%20Inquiry" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+            </a>
+        </div>
+        <p class="footer-text">> JOIN THE SERVER. FOLLOW THE CULT.</p>
+        <p style="margin-top: 15px;">
+            <a href="#" onclick="localStorage.clear(); location.reload();" style="color: #FF2222; font-size: 10px; text-decoration: none;">[ LOGOUT / CLEAR DEVICE MEMORY ]</a>
+        </p>
+    </footer>
+
+    <!-- Snipcart Engine -->
     <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
     <div id="snipcart" data-api-key="YTQ1NDkwMzItZmE2Yy00NmVlLWI4M2ItMmEyOTYyNTI0NjYzNjM5MTYxMDgwOTM5ODA0NjU5" hidden></div>
+
+    <!-- =========================================
+         EVENT INTERCEPTION & LOGIN LOGIC
+    ========================================= -->
+    <script>
+        // 1. The Interceptor: Listen to ALL clicks on the webpage BEFORE they process
+        document.addEventListener('click', function(event) {
+            
+            // Check if the exact thing they clicked was a Snipcart Add button
+            if (event.target.closest('.snipcart-add-item')) {
+                
+                // Check browser memory
+                let hasVisited = localStorage.getItem("userLoggedIn");
+                
+                // If they have NO memory tag (not logged in)
+                if (!hasVisited) {
+                    event.preventDefault();     // Block the button's default action
+                    event.stopPropagation();    // Block Snipcart from seeing the click
+                    
+                    // Trigger the login pop-up instead
+                    document.getElementById("login-modal").style.display = "flex";
+                }
+            }
+        }, true); 
+
+        // 2. Grant Access Function (Runs when they submit their number)
+        function grantAccess() {
+            let mobile = document.getElementById("mobile-input").value;
+            
+            if (mobile.length > 5) {
+                localStorage.setItem("userLoggedIn", "true");
+                document.getElementById("login-modal").style.display = "none";
+                alert("Device Linked! You can now add items to your inventory.");
+            } else {
+                alert("ERROR: Invalid Mobile Number.");
+            }
+        }
+    </script>
 
 </body>
 </html>

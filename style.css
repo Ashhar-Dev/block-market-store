@@ -603,3 +603,17 @@ body {
 .retro-btn:hover {
     background-color: #FFF;
 }
+/* =========================================
+   SNIPCART ENGINE OVERRIDES
+========================================= */
+/* Forces the entire Snipcart checkout to sit above the fixed navbar */
+#snipcart, 
+.snipcart-modal__container {
+    z-index: 99999 !important; 
+}
+
+/* Optional: Pushes the cart down slightly if you still want the navbar visible */
+/* Only use this if the z-index fix above isn't exactly what you want */
+.snipcart-cart-header {
+    margin-top: 40px !important; 
+}
