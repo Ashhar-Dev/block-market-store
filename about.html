@@ -2,69 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- THIS LINE IS THE SECRET TO MOBILE RESPONSIVENESS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BLOCK MARKET | System Info</title>
+    
+    <!-- SEO HACKS -->
     <meta name="description" content="Block Market: Underground streetwear, Y2K archive fashion, and retro tech apparel based in Bangalore.">
     <meta name="keywords" content="Block market store, streetwear India, archive fashion bangalore, retro clothing, hacker apparel">
     <meta name="author" content="Block Market">
+    
+    <!-- CSS LINKS -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
     
-    <!-- Specific CSS just for the About Page text boxes -->
+    <!-- =========================================
+         MOBILE-FIRST ABOUT PAGE CSS
+    ========================================= -->
     <style>
-        .about-container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
+        /* Base Container - Defaults to Mobile */
+        .about-wrapper {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column; /* Stacks items vertically on phones */
+            gap: 25px;
         }
 
-        .terminal-box {
-            background-color: #000;
-            color: #55FFFF;
-            border: 4px solid #55FFFF;
-            padding: 25px;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            font-size: 12px;
-            box-shadow: 6px 6px 0px #000;
-        }
-
-        .block-box {
-            background-color: #8B8B8B;
-            border: 4px solid #000;
-            padding: 25px;
-            margin-bottom: 40px;
-            line-height: 1.8;
-            font-size: 12px;
-            box-shadow: 6px 6px 0px #000;
-        }
-
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .data-table td {
-            padding: 15px 0;
-            border-bottom: 4px dashed #000;
-        }
-
-        .highlight-yellow { color: #FFEA00; }
-        .highlight-green { color: #4C9A2A; text-shadow: 1px 1px 0px #000; }
-        
-        /* Retro Counter */
-        .counter-box {
-            text-align: center;
-            background-color: #2D2D2D;
-            border: 4px solid #000;
+        .terminal-panel {
+            background-color: #050505;
+            border: 2px solid #55FFFF;
             padding: 20px;
-            margin-top: 60px;
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        .terminal-header {
+            border-bottom: 1px dashed #55FFFF;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            color: #55FFFF;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .terminal-text {
+            color: #FFF;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .highlight-text {
+            color: #55FFFF;
+            font-weight: bold;
+        }
+
+        .server-stats {
+            background: #111;
+            padding: 15px;
+            border-left: 4px solid #55FFFF;
+            margin-top: 20px;
+        }
+
+        .stat-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: #888;
+        }
+
+        /* DESKTOP OVERRIDE: If screen is wider than 768px (Tablets/PCs) */
+        @media (min-width: 768px) {
+            .about-wrapper {
+                flex-direction: row; /* Puts items side-by-side on PC */
+                padding: 40px 20px;
+            }
+            .terminal-panel {
+                flex: 1; /* Makes boxes equal width */
+                padding: 40px;
+            }
+            .terminal-text {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. BLOCKY NAVBAR (With Correct Links) -->
+    <!-- =========================================
+         1. BLOCKY NAVBAR 
+    ========================================= -->
     <header class="navbar">
         <div class="nav-container">
             <div class="logo"><h2>BLOCK MARKET</h2></div>
@@ -72,7 +100,7 @@
             <nav class="category-links" style="padding: 0;">
                 <a href="index.html">BASE CAMP</a>
                 <a href="shop.html">ALL LOOT</a>
-                <!-- This page is highlighted active -->
+                <!-- SYSTEM INFO is highlighted here -->
                 <a href="about.html" style="color: #55FFFF; border-color: #55FFFF; background: #000;">SYSTEM INFO</a>
             </nav>
 
@@ -82,66 +110,81 @@
         </div>
     </header>
 
-    <!-- 2. MAIN ABOUT CONTENT -->
-    <main class="about-container">
+    <!-- =========================================
+         2. MOBILE-ORIENTED ABOUT CONTENT
+    ========================================= -->
+    <h2 class="section-title" style="margin-top: 40px;">== SERVER ARCHITECUTRE ==</h2>
+
+    <div class="about-wrapper">
         
-        <h2 class="section-title">== THE MANIFESTO ==</h2>
-        
-        <!-- TERMINAL QUOTE SECTION -->
-        <div class="terminal-box">
-            <p style="margin-bottom: 20px;">
-                > "THE MARKET DOES NOT NEED MORE BORING STORES. IT NEEDS RAW, UNFILTERED ENERGY."
+        <!-- LEFT PANEL: The Lore / Mission -->
+        <div class="terminal-panel">
+            <div class="terminal-header">> EXECUTE: MISSION_STATEMENT.EXE</div>
+            <p class="terminal-text">
+                <span class="highlight-text">BLOCK MARKET</span> is an underground digital storefront operating out of the tech capital of India. 
             </p>
-            <p style="margin-bottom: 20px;">
-                > "ADVICE TO NEW ASPIRING PLAYERS: STOP WAITING FOR PERFECTION. BUILD LIGHTWEIGHT, CODE EXPERIMENTAL DESIGNS, FIX THE BOTTLENECKS, AND DOMINATE YOUR NICHE."
+            <p class="terminal-text">
+                We specialize in sourcing and deploying high-tier <span class="highlight-text">Y2K archive fashion, hardware accessories, and grey-hat streetwear</span>. Our aesthetic is built for the cyber-security generation—bridging the gap between the terminal screen and the street.
             </p>
-            <p class="highlight-yellow">
-                > RUN HARDWARE THAT MATCHES YOUR MINDSET.
+            <p class="terminal-text">
+                No corporate tracking. No mainstream trends. Just pure, unadulterated aesthetic for those who understand the code.
             </p>
         </div>
 
-        <h2 class="section-title">== SYSTEM DATA ==</h2>
+        <!-- RIGHT PANEL: Server Stats & Location -->
+        <div class="terminal-panel">
+            <div class="terminal-header">> PING: NODE_STATUS</div>
+            
+            <div class="server-stats">
+                <div class="stat-line">
+                    <span>HOST LOCATION:</span>
+                    <span style="color: #FFF;">BANGALORE, IN</span>
+                </div>
+                <div class="stat-line">
+                    <span>SERVER STATUS:</span>
+                    <span style="color: #00FF00;">[ ONLINE ]</span>
+                </div>
+                <div class="stat-line">
+                    <span>UPTIME:</span>
+                    <span style="color: #FFF;">99.9%</span>
+                </div>
+                <div class="stat-line">
+                    <span>ENCRYPTION:</span>
+                    <span style="color: #FFF;">AES-256</span>
+                </div>
+                <div class="stat-line">
+                    <span>FOUNDER PROTOCOL:</span>
+                    <span style="color: #FFF;">SYS_ADMIN</span>
+                </div>
+            </div>
 
-        <!-- ORIGIN DATA SECTION -->
-        <div class="block-box">
-            <table class="data-table">
-                <tr>
-                    <td class="highlight-yellow">ORIGIN COMPILE DATE:</td>
-                    <td style="text-align: right;">JUNE 2026</td>
-                </tr>
-                <tr>
-                    <td class="highlight-yellow">SERVER LOCATION:</td>
-                    <td style="text-align: right;">BANGALORE, INDIA</td>
-                </tr>
-                <tr>
-                    <td class="highlight-yellow">SECURE COMM LINK:</td>
-                    <td style="text-align: right;">admin@blockmarket.in</td>
-                </tr>
-                <tr>
-                    <td class="highlight-yellow" style="border-bottom: none;">DIRECT LINE:</td>
-                    <td style="text-align: right; border-bottom: none;">+91 98765 43210</td>
-                </tr>
-            </table>
+            <p class="terminal-text" style="margin-top: 20px; font-size: 12px; color: #888;">
+                > For direct server-to-server communication, drop a packet at our secure email node below.
+            </p>
         </div>
 
-        <!-- SITE COUNTER FOOTER PANEL -->
-        <div class="counter-box">
-            <p style="color: #AAAAAA; font-size: 10px; margin-bottom: 10px;">TOTAL UNIQUE SPAWNS (VISITORS)</p>
-            <h2 id="visit-counter" class="highlight-yellow" style="font-size: 24px; text-shadow: 3px 3px 0px #000;">00004278</h2>
+    </div>
+
+    <!-- =========================================
+         3. FOOTER & SOCIAL LINKS
+    ========================================= -->
+    <footer class="site-footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/your_profile_username/" target="_blank" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="Instagram">
+            </a>
+            <a href="mailto:admin@blockmarket.in?subject=Block%20Market%20Inquiry" class="social-icon">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+            </a>
         </div>
+        <p class="footer-text">> JOIN THE SERVER. FOLLOW THE CULT.</p>
+    </footer>
 
-    </main>
-
-    <!-- Snipcart Engine (Required so the cart button still works here) -->
+    <!-- =========================================
+         4. SNIPCART ENGINE
+    ========================================= -->
     <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
     <div id="snipcart" data-api-key="YTQ1NDkwMzItZmE2Yy00NmVlLWI4M2ItMmEyOTYyNTI0NjYzNjM5MTYxMDgwOTM5ODA0NjU5" hidden></div>
-
-    <!-- Live Counter Mock Script (Purely Visual) -->
-    <script>
-        // Simple 8-bit counter trick to simulate live tracker updates
-        let count = 4278 + Math.floor(Math.random() * 12);
-        document.getElementById('visit-counter').innerText = String(count).padStart(8, '0');
-    </script>
 
 </body>
 </html>
